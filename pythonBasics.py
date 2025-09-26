@@ -49,3 +49,44 @@ print(new_list)
 a,b,c, *other = [1,2,3,4,5,6]
 print(a,b,c)
 print(other)
+
+# Dictionary (Hashtable, map); unordered key:value pair
+dictionary = {
+    'key1': 'value1',
+    'key2': 'value2'
+}
+print(dictionary['key1']) # Looks for "key1" and prints the value
+print(dictionary)
+dict_list = [
+    {
+        'key1': 'value1',
+        'key2': 'value2' 
+    },
+    {
+        'key3': 'value3',
+        'list': [1,2,3],
+        'key4': 'value4'
+    }
+]
+print(dict_list[1]['list'][1])
+print(dictionary.keys())
+
+# 1 Create a user profile for your new game.
+# This user profile will be stored in a dictionary with keys: 'age', 'username', 'weapons', 'is_active' and 'clan'
+user_profile = {
+    'age': 34,
+    'username': 'Qlo',
+    'weapons': ['sword', 'shield', 'gun'],
+    'is_active': True
+}
+# 2 iterate and print all the keys in the above user.
+print(user_profile.keys())
+# 3 Add a new weapon to your user
+user_profile['weapons'].append('bomb')
+# 4 Add a new key to include 'is_banned'. Set it to false
+user_profile.update({'is_banned': False})
+# 5 Ban the user by setting the previous key to True
+user_profile['is_banned'] = True
+# 6 create a new user2 my copying the previous user and update the age value and username value.
+user2 = user_profile.copy()
+print(user_profile)
