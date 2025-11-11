@@ -75,6 +75,17 @@ class LibraryMember:
         for book in self.borrowed_books:
             print(f'You have borrowed {book.title}')
 
+class Library:
+    def __init__(self) -> None:
+        self.books = dict()
+        self.members = dict()
+        self.name = 'The Library'
+
+    def add_book(self, book):
+        self.books[book.title] = book.author
+        print(f'{book.title} was added to the library.')
+        print(self.books)
+
 book1 = Book('Harry potter', 'Billy', 189542, 2004)
 # book1.get_info()
 book2 = Book('Way of Kings', 'Brandon Sanderson', 5738921, 2012)
@@ -85,3 +96,6 @@ conner.view_borrowed_books()
 conner.return_book(book2)
 conner.view_borrowed_books()
 
+myLibrary = Library()
+myLibrary.add_book(book1)
+myLibrary.add_book(book2)
